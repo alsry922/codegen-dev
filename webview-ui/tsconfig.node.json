@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "forceConsistentCasingInFileNames": true,
+    //Node.js 환경에서 지원할 ECMAScript 버전(Node.js는 브라우저보다 최신 기능을 빠르게 지원)
     "target": "ES2023",
+    //Node.js 환경에서 사용 가능한 API 정의(DOM API는 제외)
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
@@ -21,5 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
+  //tsconfig.node.json으로 vite.config.ts 타입 검사
+  //vite.config.ts 실행 (Node.js 환경)
   "include": ["vite.config.ts"]
 }

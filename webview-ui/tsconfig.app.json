@@ -1,27 +1,46 @@
 {
   "compilerOptions": {
+    //TypeScript 증분 컴파일 정보를 저장할 파일 위치 지정, 빌드속도 향상(변경된 파일만 다시 컴파일)
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    //컴파일 시 파일명 대소문자 검증
+    "forceConsistentCasingInFileNames": true,
+    //컴파일된 JavaScript가 지원할 ECMAScript 버전
     "target": "ES2022",
+    //클래스 필드를 ES2022 표준에 맞게 처리
     "useDefineForClassFields": true,
+    //사용 가능한 JavaScript API 정의
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    //모듈 시스템 설정(ES 모듈 문법 그대로 유지)
     "module": "ESNext",
+    //라이브러리 타입 정의 파일(.d.ts) 검사 건너뛰기(빌드 속도 향상, 서드파티 라이브러리 타입 오류 무시)
     "skipLibCheck": true,
 
     /* Bundler mode */
+    //Vite, Webpack 같은 번들러 환경에 최적화된 모듈 해석
     "moduleResolution": "bundler",
+    //TypeScript 파일을 확장자와 함께 import 허용
     "allowImportingTsExtensions": true,
+    //import/export 문법을 정확히 구분하여 처리(타입 전용 import는 반드시 type 키워드 사용)
     "verbatimModuleSyntax": true,
+    //모든 파일을 모듈로 강제 처리(전역 스코프 오염 방지)
     "moduleDetection": "force",
+    //TypeScript 컴파일러가 JavaScript 파일을 생성하지 않음, 최종 JS 파일은 Vite(번들러)가 직접 번들링을 담당하므로 필요 없음
     "noEmit": true,
+    //최신 React JSX 변환 방식 사용
     "jsx": "react-jsx",
 
     /* Linting */
+    //모든 엄격한 타입 검사 옵션 활성화(noImplicitAny, strictNullChecks, strictFunctionTypes 등)
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    //컴파일 시 제거 가능한 TypeScript 문법만 허용(const enum 등 JavaScript로 변환되는 기능 금지)
     "erasableSyntaxOnly": true,
+    //switch문에서 의도하지 않은 fallthrough 방지
     "noFallthroughCasesInSwitch": true,
+    //부작용이 있는 import의 안전성 검증, 타입 전용 import에서 실제 코드 실행 방지
     "noUncheckedSideEffectImports": true
   },
+  // 컴파일에 포함할 파일/디렉토리 패턴 지정(glob 패턴 사용 가능, */**/?)
   "include": ["src"]
 }
