@@ -1,6 +1,6 @@
 {
-  "name": "codegen-dev",
-  "displayName": "codegen-dev",
+  "name": "genai-codegen-extension",
+  "displayName": "genai-codegen-extension",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -14,7 +14,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "codegen-dev.showHelloWorld",
+        "command": "genai-codegen-extension.showHelloWorld",
         "title": "Hello World (React + Vite): Show"
       }
     ]
